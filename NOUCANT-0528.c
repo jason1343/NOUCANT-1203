@@ -91,7 +91,6 @@ void got_packet(u_char *args, const struct pcap_pkthdr *header, const u_char *pa
                 sourceIP[c].count = 1;
                 c++;
             } else {
-		printf("%s, %d\n", sourceIP[findSourceip].ip, sourceIP[findSourceip].count);
                 sourceIP[findSourceip].count += 1;
                 if (sourceIP[findSourceip].count > 1000) {
                     int findBlackip = findBlackIPindex(inet_ntoa(ip->iph_sourceip));
